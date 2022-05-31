@@ -1,0 +1,40 @@
+<h4>
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+    </svg>
+    <a *ngIf="data" [routerLink]="'/categories'">{{data.gallery?.name | titlecase}}</a>
+  </h4>
+  
+  <br>
+  <br>
+  
+  <div class="row" *ngIf="data">
+    <div class="col-sm-6 col-md-4 col-lg-3" *ngFor="let image of data.images">
+      <figure>
+        <img [src]="'http://api.programator.sk/images/304x295/' + image.fullpath" alt="{{image.name}}">
+      </figure>
+    </div>
+    <div class="col-sm-6 col-md-4 col-lg-3">
+      <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#addPhotosModal">
+        Pridať fotky
+      </button>
+    </div>
+  </div>
+    
+    <!-- Add Photos Modal -->
+    <div class="modal fade" id="addPhotosModal" tabindex="-1" aria-labelledby="addPhotosModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addPhotosModalLabel">Pridať fotky</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            ...
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Pridať</button>
+          </div>
+        </div>
+      </div>
+    </div>
