@@ -7,12 +7,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { GalleryComponent } from './gallery/gallery.component';
+import { CardComponent } from './card/card.component';
+import { AddCardComponent } from './add-card/add-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CategoriesComponent,
-    GalleryComponent
+    GalleryComponent,
+    CardComponent,
+    AddCardComponent
   ],
   imports: [
     BrowserModule,
