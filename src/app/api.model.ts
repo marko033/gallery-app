@@ -6,6 +6,7 @@ export interface Gallery {
     path:   string;
     image?: Image;
     name:   string;
+    imagesCount?: number;
 }
 
 export interface Image {

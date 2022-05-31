@@ -4,7 +4,7 @@
     <div class="col-md-6 col-lg-3" *ngFor="let category of categories">
         <div class="card border-0 transform-on-hover">
           <a [routerLink]="'/gallery/' + category.name">
-            <span class="badge rounded-pill position-absolute">10 fotiek</span>
+            <span class="badge rounded-pill position-absolute">{{category.imagesCount}} {{category.imagesCount < 5  ? 'fotky' : 'fotiek'}}</span>
             <img [src]="'http://api.programator.sk/images/304x295/' + category?.image?.fullpath" alt="category.name" class="card-img-top" onerror="this.src='../../assets/img.jpg';">
           </a>
             <div class="card-body">
@@ -22,7 +22,7 @@
             </svg>
             <h6>
               <br>
-              <a type="button" data-bs-toggle="modal" data-bs-target="#addCategoryModal">Pridať kategóriu</a>
+              <a type="button" class="stretched-link" data-bs-toggle="modal" data-bs-target="#addCategoryModal">Pridať kategóriu</a>
             </h6>
           </div>
       </div>
