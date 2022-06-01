@@ -1,6 +1,15 @@
-.card-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+.card {
+    height: 296px;
+    width: 306px;
+    
+    .card-body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    
+        a {
+            margin-top: 0.5rem;
+        }
+    }
 }
