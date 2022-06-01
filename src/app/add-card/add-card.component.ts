@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-add-card',
@@ -9,6 +9,8 @@ export class AddCardComponent implements OnInit {
 
   @Input() name!: string;
   @Input() modal!: string;
+
+  @Output() openModal = new EventEmitter<any>();
 
   constructor() { }
 

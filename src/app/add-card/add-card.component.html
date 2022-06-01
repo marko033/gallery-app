@@ -6,7 +6,7 @@
       </svg>
       <br>
       <h6>
-        <a type="button" class="stretched-link" data-bs-toggle="modal" [attr.data-bs-target]="modal">Pridať {{name}}</a>
+        <a type="button" class="stretched-link" data-bs-toggle="modal" [attr.data-bs-target]="modal" (click)="openModal.emit()">Pridať {{name}}</a>
       </h6>
     </div>
 </div>

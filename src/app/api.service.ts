@@ -33,6 +33,16 @@ export class ApiService {
     );
   }
 
+  public uploadImages(file: any, path: string): Observable<any> {
+    const uploadData = new FormData();
+    uploadData.append('image', file, file.name)
+    // for(const file of files) {
+    // }
+    return this.httpClient.post(this.REST_API_SERVER + '/gallery/' + path, uploadData).pipe(
+      catchError(this.handleError)
+    );
+  }
+
   private handleError(error: HttpErrorResponse) {
     const errMsg = error;
     console.error(JSON.stringify(errMsg));

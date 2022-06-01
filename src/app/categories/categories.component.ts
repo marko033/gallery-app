@@ -37,14 +37,14 @@ export class CategoriesComponent implements OnInit {
               element.imagesCount = data.images.length
             },
             error => {
-              console.log(error);
+              console.error(error);
             })
 
             this.categories.imagesCount = element.imagesCount;
         });
       },
       error => {
-        console.log(error);
+        console.error(error);
       });
   }
 
