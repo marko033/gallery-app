@@ -10,8 +10,25 @@ img {
 
 .modal-body {
     height: 295px;
+}
+
+.file-container {
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    border: 1px dashed rgba(0, 0, 0, .13);
+    padding: 2rem;
+
+    .file {
+        opacity: 0;
+        width: auto;
+        height: 2rem;
+    }
+
+    span {
+        color: gray;
+        padding-top: 1rem;
+    }
 }
