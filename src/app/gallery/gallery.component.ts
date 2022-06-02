@@ -15,7 +15,6 @@ export class GalleryComponent implements OnInit {
   data!: any;
   galleryName!: string;
 
-  file: any;
   files: any;
 
   private _album: Array<any> = [];
@@ -35,26 +34,23 @@ export class GalleryComponent implements OnInit {
     this.getImages();
   }
 
-  test(images: any) {
-    console.log(images);
+  getImages() {
+    this.apiService.getGalleryPath(this.galleryName)
+      .subscribe( data => {
+        this.data = data;
+        this.createAlbumOfImages(this.data.images);
+      },
+      error => {
+        console.error(error);
+      })
+  }
+
+  createAlbumOfImages(images: any) {
 
     for(const image of images) {
       const src = 'http://api.programator.sk/images/1212x909/' + image.fullpath;
       const caption = image.name;
       const thumb = 'http://api.programator.sk/images/304x295/' + image.fullpath;
-      const album = {
-         src: src,
-         caption: caption,
-         thumb: thumb
-      };
-
-      this._album.push(album);
-    }
-
-    for (let i = 1; i <= 4; i++) {
-      const src = 'demo/img/image' + i + '.jpg';
-      const caption = 'Image ' + i + ' caption here';
-      const thumb = 'demo/img/image' + i + '-thumb.jpg';
       const album = {
          src: src,
          caption: caption,
@@ -73,17 +69,6 @@ export class GalleryComponent implements OnInit {
   close(): void {
     // close lightbox programmatically
     this._lightbox.close();
-  }
-
-  getImages() {
-    this.apiService.getGalleryPath(this.galleryName)
-      .subscribe( data => {
-        this.data = data;
-        this.test(this.data.images);
-      },
-      error => {
-        console.error(error);
-      })
   }
 
   openModal() {
