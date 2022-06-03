@@ -1,7 +1,7 @@
 <div class="card border-0 transform-on-hover">
     <a [routerLink]="'/gallery/' + category.name">
         <span class="badge rounded-pill position-absolute">{{category.imagesCount}} {{(category.imagesCount === 0 || category.imagesCount > 4)  ? 'fotiek' : 'fotky'}}</span>
-        <img [src]="'http://api.programator.sk/images/304x295/' + category?.image?.fullpath" alt="category.name" class="card-img-top" onerror="this.src='../../assets/img.jpg';">
+        <img [src]="apiServer + '/images/304x295/' + category?.image?.fullpath" alt="category.name" class="card-img-top" onerror="this.src='../../assets/img.jpg';">
     </a>
     <div class="card-body">
         <h6>{{category.name | titlecase}}</h6>

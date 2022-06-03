@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import { Lightbox } from 'ngx-lightbox';
 
+import { environment } from '../../environments/environment';
 import { ApiService } from '../api.service';
 
 @Component({
@@ -12,6 +13,8 @@ import { ApiService } from '../api.service';
 })
 export class GalleryComponent implements OnInit {
 
+  apiServer: string = environment.apiServer;
+  
   data!: any;
   galleryName!: string;
 
@@ -48,9 +51,9 @@ export class GalleryComponent implements OnInit {
   createAlbumOfImages(images: any) {
 
     for(const image of images) {
-      const src = 'http://api.programator.sk/images/1212x909/' + image.fullpath;
+      const src = `${environment.apiServer}/images/1212x909/${image.fullpath}`;
       const caption = image.name;
-      const thumb = 'http://api.programator.sk/images/304x295/' + image.fullpath;
+      const thumb = `${environment.apiServer}/images/304x295/${image.fullpath}`;
       const album = {
          src: src,
          caption: caption,

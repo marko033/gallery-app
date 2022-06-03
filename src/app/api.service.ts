@@ -4,6 +4,8 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Observable, throwError as observableThrowError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
+import { environment } from '../environments/environment';
+
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json'
@@ -15,7 +17,7 @@ const httpOptions = {
 })
 export class ApiService {
 
-  private REST_API_SERVER = "http://api.programator.sk";
+  private REST_API_SERVER = environment.apiServer;
 
   constructor(private httpClient: HttpClient) { }
 
