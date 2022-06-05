@@ -9,21 +9,17 @@
   <br>
   
   <div class="row" *ngIf="data">
-    <div class="col-sm-6 col-md-4 col-lg-3" *ngFor="let image of data.images; let i=index">
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let image of data.images; let i=index">
       <div class="card border-0 transform-on-hover">
         <img [src]="apiServer + '/images/304x295/' + image.fullpath" alt="{{image.name}}" class="rounded float-left" (click)="open(i)">
       </div>
-      <figure>
-      </figure>
     </div>
-    <div class="col-sm-6 col-md-4 col-lg-3">
-      <div class="add-img">
-        <app-add-card 
-          [name]="'fotky'"
-          [modal]="'#addPhotosModal'"
-          (openModal)="openModal()"
-          ></app-add-card>
-      </div>
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <app-add-card 
+        [name]="'fotky'"
+        [modal]="'#addPhotosModal'"
+        (openModal)="openModal()"
+      ></app-add-card>
     </div>
   </div>
     

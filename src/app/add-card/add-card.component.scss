@@ -13,3 +13,10 @@
         }
     }
 }
+
+@media only screen and (max-width: 1500px) {
+    .card {
+        width: 100%;
+        object-fit: cover;
+    }
+}

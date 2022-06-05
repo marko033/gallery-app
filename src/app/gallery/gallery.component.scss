@@ -9,7 +9,7 @@ img {
 }
 
 .modal-body {
-    height: 295px;
+    max-height: 295px;
 }
 
 .file-container {
@@ -30,5 +30,12 @@ img {
     span {
         color: gray;
         padding-top: 1rem;
+    }
+}
+
+@media only screen and (max-width: 1500px) {
+    img {
+        width: 100%;
+        object-fit: cover;
     }
 }
