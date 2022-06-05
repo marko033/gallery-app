@@ -1,6 +1,7 @@
+@import '../../styles.scss';
+
 .card {
-    height: 296px;
-    width: 306px;
+    @include height-width;
     
     .card-body {
         display: flex;
@@ -14,9 +15,4 @@
     }
 }
 
-@media only screen and (max-width: 1500px) {
-    .card {
-        width: 100%;
-        object-fit: cover;
-    }
-}
+@include card-res;

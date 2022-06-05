@@ -58,3 +58,26 @@
 	    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.15) !important; 
 	}
 }
+
+@mixin height-width {
+  height: 296px;
+  width: 306px;
+}
+
+@mixin img-res {
+  @media only screen and (max-width: 1500px) {
+    img {
+        width: 100%;
+        object-fit: cover;
+    }
+  }
+}
+
+@mixin card-res {
+  @media only screen and (max-width: 1500px) {
+    .card {
+        width: 100%;
+        object-fit: cover;
+    }
+  }
+}

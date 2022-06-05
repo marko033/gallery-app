@@ -1,11 +1,12 @@
+@import '../../styles.scss';
+
 .gallery-name {
     font-size: 18px;
     margin-left: 5px;
 }
 
 img {
-    height: 296px;
-    width: 306px;
+    @include height-width;
 }
 
 .modal-body {
@@ -33,9 +34,4 @@ img {
     }
 }
 
-@media only screen and (max-width: 1500px) {
-    img {
-        width: 100%;
-        object-fit: cover;
-    }
-}
+@include img-res;
